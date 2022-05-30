@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint:fix": "eslint --cache --ext .js,.jsx,.ts,.tsx,.vue --no-error-on-unmatched-pattern --quiet --fix ./src",
+    "lint:fix": "eslint  --ext .js,.jsx,.ts,.tsx,.vue --no-error-on-unmatched-pattern --quiet --fix ./src",
     "format": "prettier --write .",
     "mock": "json-server --watch ./src/mock/mockData.json",
     "commit": "cz"

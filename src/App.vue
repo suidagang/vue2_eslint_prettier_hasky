@@ -8,8 +8,8 @@
 export default {
   mounted() {
     let b = 222;
-    console.log(b);
     // scaleHtml(this.$refs.allPage);
+    console.log(b);
   }
 };
 </script>

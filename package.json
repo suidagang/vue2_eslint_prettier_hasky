@@ -10,6 +10,15 @@
     "mock": "json-server --watch ./src/mock/mockData.json",
     "commit": "cz"
   },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**": [
+      "prettier --config .prettierrc.js --write",
+      "git add"
+    ]
+  },
   "dependencies": {
     "axios": "^0.27.2",
     "be-full": "^0.1.4",

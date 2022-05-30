@@ -8,8 +8,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/ajax.sword': {
-        // target: 'http://192.168.1.116:8080/', //360后台接口的服务地址
-        target: 'http://10.10.23.179:8080/', //全景后台接口的服务地址
+        target: 'http://127.0.0.1:8080/',
         changeOrigin: true, // 设置是否将host更换为代理url
         secure: false,
         pathRewrite: {

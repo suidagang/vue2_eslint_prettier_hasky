@@ -7,7 +7,7 @@
 // import scaleHtml from './common/comUtil/scaleHtml';
 export default {
   mounted() {
-    let b = 222;
+    let        b = 222;
     console.log(b);
     // scaleHtml(this.$refs.allPage);
   }

@@ -7,7 +7,7 @@
       style=" 560px;"
     >
       <el-option
-        v-for="item in formatData(datas)"
+        v-for="item in dealOptions(datas)"
         :key="item.value"
         :label="item.label"
         :value="item.value"
@@ -26,7 +26,7 @@
         default-expand-all
       />
     </el-select>
-    <div class="list-text">统计时间起：</div>
+    <div class="list-text" style="margin-top: 400px">统计时间起：</div>
     <el-date-picker
       v-model="startDate"
       type="month"
@@ -100,6 +100,7 @@ export default {
   mounted() {
     this.startDate = '2022-03';
     this.endDate = '2022-05';
+    console.log(this.dealOptions(this.datas), '--0');
   },
   computed: {
     pickerOptionsStart() {
@@ -136,55 +137,12 @@ export default {
     }
   },
   methods: {
-    startDateOption() {
-      let _self = this;
-      return {
-        disabledDate: (time) => {
-          if (!_self.endDate) {
-            return false;
-          }
-          return (
-            time.getTime() >
-            new Date(_self.endDate.replace(/-/g, '/')).getTime()
-          );
-        }
-      };
-    },
-    endDateOption() {
-      let _self = this;
-      return {
-        disabledDate: (time) => {
-          if (!_self.startDate) {
-            return false;
-          }
-          return (
-            time.getTime() <
-            new Date(_self.startDate.replace(/-/g, '/')).getTime()
-          );
-        }
-      };
-    },
-    formatData(data) {
-      let options = [];
-      data.forEach((item) => {
-        options.push({ label: item.label, value: item.id });
-        if (item.children) {
-          item.children.forEach((items) => {
-            options.push({ label: items.label, value: items.id });
-            if (items.children) {
-              items.children.forEach((itemss) => {
-                options.push({ label: itemss.label, value: itemss.id });
-                if (itemss.children) {
-                  itemss.children.forEach((itemsss) => {
-                    options.push({ label: itemsss.label, value: itemsss.id });
-                  });
-                }
-              });
-            }
-          });
-        }
-      });
-      return options;
+    dealOptions(data) {
+      return data.reduce(
+        (arr, { id, label, children = [] }) =>
+          arr.concat([{ value: id, label }], this.dealOptions(children)),
+        []
+      );
     },
     handleNodeClick(node) {
       this.value = node.id;

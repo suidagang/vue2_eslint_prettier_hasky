@@ -38,13 +38,17 @@ module.exports = {
   chainWebpack: (config) => {
     config.resolve.alias.set('@', resolve('src'));
   },
-
-  pluginOptions: {
+  pluginOptions : { 
+    lintStyleOnBuild : true , 
+    stylelint : { 
+      fix : true ,  // boolean (default: true) 
+      files : ['src/**/*.{vue,htm,html,css,sss,less,scss}'] ,  // string | [string] (默认: ['src/**/*.{vue,htm,html,css,sss,less,scss}']) 
+    },
     'style-resources-loader': {
       preProcessor: 'less',
       patterns: [
         path.resolve(__dirname, 'src/common/commonStyle/variable.less')
       ]
     }
-  }
+  } 
 };

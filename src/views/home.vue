@@ -4,7 +4,7 @@
       class="main-select-tree"
       ref="selectTree"
       v-model="value"
-      style=" 560px;"
+      style="width: 560px"
     >
       <el-option
         v-for="item in dealOptions(datas)"

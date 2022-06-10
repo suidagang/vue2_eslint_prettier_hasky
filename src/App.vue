@@ -11,15 +11,15 @@ export default {
 </script>
 <style lang="less">
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 html,
 body,
 #app {
-  min-height: 100%;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
+  min-height: 100%;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

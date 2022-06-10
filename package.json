@@ -8,7 +8,8 @@
     "lint:fix": "eslint  --ext .js,.jsx,.ts,.tsx,.vue --no-error-on-unmatched-pattern --quiet --fix ./src",
     "format": "prettier --write .",
     "mock": "json-server --watch ./src/mock/mockData.json",
-    "commit": "cz"
+    "commit": "cz",
+    "lint:style": "stylelint  src/**/*.{vue,scss,css,sass,less} --fix"
   },
   "lint-staged": {
     "src/**": [
@@ -49,9 +50,20 @@
     "less-loader": "^5.0.0",
     "lint-staged": "^12.4.2",
     "node-sass": "^5.0.0",
+    "postcss": "^8.4.14",
+    "postcss-html": "^1.4.1",
+    "postcss-less": "^6.0.0",
     "prettier": "^2.6.2",
     "sass-loader": "^10.1.0",
     "style-resources-loader": "^1.4.1",
+    "stylelint": "^14.9.0",
+    "stylelint-config-html": "^1.0.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^8.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-less": "^1.0.5",
+    "stylelint-order": "^5.0.0",
     "swiper": "^6.5.8",
     "vue-awesome-swiper": "^4.1.1",
     "vue-cli-plugin-style-resources-loader": "~0.1.5",

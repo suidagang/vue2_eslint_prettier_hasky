@@ -96,8 +96,8 @@ export default {
   display: none !important;
 }
 .pagination-container {
-  background: rgba(0, 0, 0, 0);
   padding: 32px 16px;
+  background: rgb(0 0 0 / 0%);
 }
 .pagination-container.hidden {
   display: none;

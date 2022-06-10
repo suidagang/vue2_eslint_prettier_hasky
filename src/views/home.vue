@@ -77,7 +77,7 @@ export default {
                   label: '五华区',
                   children: [{ id: 8, label: '北辰小区' }]
                 },
-                { id: 4, label: '盘龙区' }
+                { id: 4, label: '盘龙区1' }
               ]
             }
           ]

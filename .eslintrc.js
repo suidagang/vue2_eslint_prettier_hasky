@@ -19,6 +19,9 @@ module.exports = {
   plugins: ['prettier', 'vue'],
   rules: {
     // 关闭驼峰命名规则
-    'vue/multi-word-component-names': 0
+    'vue/multi-word-component-names': 0,
+    "eol-last": [2, "always"],
+    "indent": [2, 2],
+    "linebreak-style": [1,"windows"]
   }
 };

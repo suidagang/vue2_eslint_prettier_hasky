@@ -10,6 +10,7 @@ export default {
 };
 </script>
 <style lang="less">
+@test: 12px;
 * {
   margin: 0;
   padding: 0;

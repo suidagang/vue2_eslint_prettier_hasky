@@ -14,7 +14,6 @@
   "lint-staged": {
     "src/**": [
       "prettier --config .prettierrc.js --write",
-      "eslint --ext .js,.vue --no-error-on-unmatched-pattern --quiet --fix",
       "stylelint  src/**/*.{vue,scss,css,sass,less} --fix"
     ]
   },

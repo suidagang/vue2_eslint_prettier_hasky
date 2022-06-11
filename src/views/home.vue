@@ -1,11 +1,6 @@
 <template>
   <div class="home">
-    <el-select
-      class="main-select-tree"
-      ref="selectTree"
-      v-model="value"
-      style="width: 560px"
-    >
+    <el-select class="main-select-tree" ref="selectTree" v-model="value" style="width: 560px">
       <el-option
         v-for="item in dealOptions(datas)"
         :key="item.value"
@@ -53,7 +48,7 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: 'com-home',
   data() {
     return {
       startDate: '',
@@ -95,61 +90,54 @@ export default {
         children: 'children',
         label: 'label'
       }
-    };
+    }
   },
   mounted() {
-    this.startDate = '2022-03';
-    this.endDate = '2022-05';
-    console.log(this.dealOptions(this.datas), '--0');
+    this.startDate = '2022-03'
+    this.endDate = '2022-05'
+    console.log(this.dealOptions(this.datas), '--0')
   },
   computed: {
     pickerOptionsStart() {
-      let _self = this;
-      console.log('监听开始1');
-      console.log(_self.endDate);
+      let _self = this
+      console.log('监听开始1')
+      console.log(_self.endDate)
       return {
-        disabledDate: (time) => {
+        disabledDate: time => {
           if (!_self.endDate) {
-            return false;
+            return false
           }
-          return (
-            time.getTime() >
-            new Date(_self.endDate.replace(/-/g, '/')).getTime()
-          );
+          return time.getTime() > new Date(_self.endDate.replace(/-/g, '/')).getTime()
         }
-      };
+      }
     },
     pickerOptionsEnd() {
-      let _self = this;
-      console.log('监听结束1');
-      console.log(_self.startDate);
+      let _self = this
+      console.log('监听结束1')
+      console.log(_self.startDate)
       return {
-        disabledDate: (time) => {
+        disabledDate: time => {
           if (!_self.startDate) {
-            return false;
+            return false
           }
-          return (
-            time.getTime() <
-            new Date(_self.startDate.replace(/-/g, '/')).getTime()
-          );
+          return time.getTime() < new Date(_self.startDate.replace(/-/g, '/')).getTime()
         }
-      };
+      }
     }
   },
   methods: {
     dealOptions(data) {
       return data.reduce(
-        (arr, { id, label, children = [] }) =>
-          arr.concat([{ value: id, label }], this.dealOptions(children)),
+        (arr, { id, label, children = [] }) => arr.concat([{ value: id, label }], this.dealOptions(children)),
         []
-      );
+      )
     },
     handleNodeClick(node) {
-      this.value = node.id;
-      this.$refs.selectTree.blur();
+      this.value = node.id
+      this.$refs.selectTree.blur()
     }
   }
-};
+}
 </script>
 <style lang="less">
 .main-select-el-tree .el-tree-node .is-current > .el-tree-node__content {

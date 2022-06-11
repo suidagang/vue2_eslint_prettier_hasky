@@ -1,24 +1,18 @@
 module.exports = {
   root: true,
   env: {
-    browser: true,
-    es2021: true,
-    commonjs: true,
-    es6: true
+    node: true
   },
-  globals: {
-    // script setup
-    process: 'readonly',
-    __dirname: 'readonly'
-  },
-  extends: ['eslint:recommended', 'plugin:vue/essential'],
+  extends: [
+    'plugin:vue/essential',
+    'eslint:recommended',
+    'plugin:prettier/recommended'
+  ],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module'
+    parser: '@babel/eslint-parser' // 解析器
   },
-  plugins: ['prettier', 'vue'],
   rules: {
-    // 关闭驼峰命名规则
-    'vue/multi-word-component-names': 0
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
   }
 };

@@ -1,24 +1,24 @@
-import axios from 'axios';
-axios.defaults.timeout = 1000 * 60 * 3;
+import axios from 'axios'
+axios.defaults.timeout = 1000 * 60 * 3
 //http request 拦截器(请求前的拦截)
 axios.interceptors.request.use(
-  (config) => {
-    return config;
+  config => {
+    return config
   },
-  (error) => {
-    return Promise.reject(error);
+  error => {
+    return Promise.reject(error)
   }
-);
+)
 
 //http response 拦截器(请求成功的统一处理)
 axios.interceptors.response.use(
-  (response) => {
-    return response;
+  response => {
+    return response
   },
-  (error) => {
-    return Promise.reject(error);
+  error => {
+    return Promise.reject(error)
   }
-);
+)
 
 /**
  * 封装get方法
@@ -33,13 +33,13 @@ export function fetch(url, params = {}) {
       .get(url, {
         params: params
       })
-      .then((response) => {
-        resolve(response.data);
+      .then(response => {
+        resolve(response.data)
       })
-      .catch((err) => {
-        reject(err);
-      });
-  });
+      .catch(err => {
+        reject(err)
+      })
+  })
 }
 
 /**
@@ -58,12 +58,12 @@ export function post(url, data = {}) {
         }
       })
       .then(
-        (response) => {
-          resolve(response.data);
+        response => {
+          resolve(response.data)
         },
-        (err) => {
-          reject(err);
+        err => {
+          reject(err)
         }
-      );
-  });
+      )
+  })
 }

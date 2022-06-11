@@ -1,7 +1,7 @@
-import router from './router/index';
+import router from './router/index'
 // import $store from '@/store/index';
 //只加载一次路由
-let registerRouteFresh = true;
+let registerRouteFresh = true
 //路由拦截
 router.beforeEach(async (to, from, next) => {
   if (registerRouteFresh) {
@@ -10,8 +10,8 @@ router.beforeEach(async (to, from, next) => {
     //   await $store.dispatch('getAjaxSwjg');
     //   registerRouteFresh = false;
     // }
-    next();
+    next()
   } else {
-    next();
+    next()
   }
-});
+})

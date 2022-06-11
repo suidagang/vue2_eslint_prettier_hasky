@@ -7,7 +7,7 @@
 // import scaleHtml from './common/comUtil/scaleHtml';
 export default {
   mounted() {}
-};
+}
 </script>
 <style lang="less">
 @test: 12px;

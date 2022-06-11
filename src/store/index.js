@@ -1,6 +1,6 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-Vue.use(Vuex);
+import Vue from 'vue'
+import Vuex from 'vuex'
+Vue.use(Vuex)
 /**
  * 获取默认时间
  *
@@ -10,4 +10,4 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {}
-});
+})
